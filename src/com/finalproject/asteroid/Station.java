@@ -45,7 +45,7 @@ public class Station {
     }
    
     public void paint(Graphics g){
-        g.setColor(Color.RED);
+        g.setColor(Color.BLUE);
         double lv = 20 * Math.sin(angle);//gun is 20
         double lh = 20 * Math.cos(angle);//pixels long
         g.drawLine((int)x, (int)y, (int)(x+lh), (int)(y-lv));
