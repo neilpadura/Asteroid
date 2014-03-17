@@ -101,7 +101,7 @@ public class AsteroidGame extends JFrame {
         while(e.hasNext() || r.hasNext()){
             Rocket rock1 = (Rocket)e.next();
             rock1.move(asteroids);
-//            Rocket rock2 = (Rocket)r.next();
+//          Rocket rock2 = (Rocket)r.next();
 //          rock2.move(asteroids);
         }
     }
