@@ -9,7 +9,7 @@ import java.awt.Graphics;
 
 /**
  *
- * @author kurtgwapo
+ * @author gwapoko
  */
 public class Asteroid {
     public double x, y;
