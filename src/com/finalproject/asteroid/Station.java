@@ -1,20 +1,13 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.finalproject.asteroid;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.LinkedList;
 
-/**
- *
- * @author kurtjunsheanespinosa
- */
 public class Station {
     private double angle = Math.PI/2.0;
-    private int hits = 0;
+    public static int score = 0;
+    public int hits = 1000;
     private final double y;
     private final double x;
     
@@ -41,14 +34,23 @@ public class Station {
     
     public void checkHit(Asteroid rock){
         if(rock.nearTo(x, y))
-            hits += rock.size;
+            hits -= rock.size;
+    }
+    
+    public boolean stillAlive() {
+        return hits != 0;
+    }
+    
+    public void addScore(int i) {
+        score += i;
     }
    
     public void paint(Graphics g){
-        g.setColor(Color.BLUE);
-        double lv = 20 * Math.sin(angle);//gun is 20
-        double lh = 20 * Math.cos(angle);//pixels long
+        g.setColor(Color.black);
+        double lv = 20 * Math.sin(angle);
+        double lh = 20 * Math.cos(angle);
         g.drawLine((int)x, (int)y, (int)(x+lh), (int)(y-lv));
-        g.drawString("Hits: "+hits, (int)(x+10), (int)(y-5));
+        g.drawString("HP: " + hits +"/1000", 50, 50);
+        g.drawString("Score: " + score, 400, 50);
     }
 }
