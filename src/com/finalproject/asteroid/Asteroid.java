@@ -29,7 +29,7 @@ public class Asteroid {
     }
     
     public void paint(Graphics g){
-        g.setColor(Color.BLACK);
+        g.setColor(Color.black);
         g.drawOval((int)x, (int)y, size, size);
     }
     
