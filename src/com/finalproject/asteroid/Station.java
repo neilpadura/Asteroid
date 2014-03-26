@@ -8,20 +8,38 @@ public class Station {
     private double angle = Math.PI/2.0;
     public static int score = 0;
     public int hits = 1000;
-    private final double y;
-    private final double x;
+    private double y;
+    private double x;
     
     public Station(double ix, double iy){
         x = ix;
         y = iy;
     }
     
-    public void moveLeft(){
-        angle = angle + 0.1;        
+    public void turnLeft(){
+        angle = angle + 0.5;        
     }
     
-    public void moveRight(){
-        angle = angle - 0.1;
+    public void turnRight(){
+        angle = angle - 0.5;
+    }
+    
+    public void moveUp() {
+        if (y < 30) {y += 10;} 
+        else {y -= 10;}
+    }
+
+    public void moveDown() {
+        if (y > 400) {y -= 10;} 
+        else {y += 10;}
+    }
+    
+    public void moveLeft() {
+        if (x < 0) {x += 10;} else {x -= 10;}
+    }
+    
+    public void moveRight() {
+        if (x > 500) {x -= 10;} else {x += 10;}
     }
     
     public void fire(LinkedList rockets){

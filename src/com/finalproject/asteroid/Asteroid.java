@@ -1,16 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.finalproject.asteroid;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
-/**
- *
- * @author kurtgwapo
- */
 public class Asteroid {
     public double x, y;
     private double dx, dy;

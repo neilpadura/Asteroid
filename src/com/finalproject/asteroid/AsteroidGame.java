@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.util.Iterator;
 import java.util.LinkedList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class AsteroidGame extends JFrame {
     private int FrameWidth = 500;
@@ -58,12 +59,13 @@ public class AsteroidGame extends JFrame {
         public void keyPressed(KeyEvent e){
             char key = e.getKeyChar();
             switch(key){
-                case 'j': station1.moveLeft();break;
-                case 'k': station1.moveRight();break;
+                case 'j': station1.turnLeft();break;
+                case 'k': station1.turnRight();break;
                 case 'l': station1.fire(rockets1);break;
-                /*case 'a': station2.moveLeft();break;
-                case 's': station2.moveRight();break;
-                case 'd': station2.fire(rockets2);break;*/
+                case 'w': station1.moveUp();break;
+                case 's': station1.moveDown();break;
+                case 'a': station1.moveLeft();break;
+                case 'd': station1.moveRight();break;
                 case 'q': System.exit(0);                      
             }
         }
@@ -98,6 +100,7 @@ public class AsteroidGame extends JFrame {
             try{Thread.sleep(100);}
             catch(Exception e){}  
         }
+        JOptionPane.showMessageDialog(null, "Game Over!");
         System.exit(0); 
     }
 }
