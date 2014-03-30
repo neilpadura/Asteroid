@@ -17,11 +17,11 @@ public class Station {
     }
     
     public void turnLeft(){
-        angle = angle + 0.5;        
+        angle = angle + 0.4;        
     }
     
     public void turnRight(){
-        angle = angle - 0.5;
+        angle = angle - 0.4;
     }
     
     public void moveUp() {
