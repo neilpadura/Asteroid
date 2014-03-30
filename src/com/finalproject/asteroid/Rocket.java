@@ -30,7 +30,6 @@ public class Rocket {
             }
         }
     }
-    
     public void paint(Graphics g){
         g.setColor(Color.BLACK);
         g.fillOval((int)x, (int)y, 5, 5);
