@@ -25,13 +25,11 @@ public class Station {
     }
     
     public void moveUp() {
-        if (y < 30) {y += 10;} 
-        else {y -= 10;}
+        if (y < 30) {y += 10;} else {y -= 10;}
     }
 
     public void moveDown() {
-        if (y > 400) {y -= 10;} 
-        else {y += 10;}
+        if (y > 400) {y -= 10;} else {y += 10;}
     }
     
     public void moveLeft() {
@@ -45,14 +43,15 @@ public class Station {
     public void fire(LinkedList rockets){
         double cosAngle = Math.cos(angle);
         double sinAngle = Math.sin(angle);
-        
         Rocket r = new Rocket(x+15*cosAngle, y-15*sinAngle, 5*cosAngle, -5*sinAngle);
         rockets.addFirst(r);
     }
     
     public void checkHit(Asteroid rock){
-        if(rock.nearTo(x, y))
+        if(rock.nearTo(x, y)){
             hits -= rock.size;
+            rock.destroy();
+        }
     }
     
     public boolean stillAlive() {
@@ -62,10 +61,12 @@ public class Station {
     public void addScore(int i) {
         score += i;
     }
+    
     public void paint(Graphics g){
         g.setColor(Color.black);
-        double lv = 20 * Math.sin(angle);
-        double lh = 20 * Math.cos(angle);
+        double lv = 10 * Math.sin(angle);
+        double lh = 10 * Math.cos(angle);
+        g.drawLine((int)x, (int)y, (int)(x-lh), (int)(y+lv));
         g.drawLine((int)x, (int)y, (int)(x+lh), (int)(y-lv));
         g.drawString("HP: " + hits +"/1000", 50, 50);
         g.drawString("Score: " + score, 400, 50);
