@@ -62,7 +62,6 @@ public class Station {
     public void addScore(int i) {
         score += i;
     }
-   
     public void paint(Graphics g){
         g.setColor(Color.black);
         double lv = 20 * Math.sin(angle);
